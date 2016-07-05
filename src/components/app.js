@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import getData from '../services/index.jsx';
+import Navbar from './navbar';
 
 class App extends Component {
     constructor(props) {
@@ -27,7 +28,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                Summative
+                <div>
+                    <Navbar />
+                </div>
+                <div>
+                    Summative
+                </div>
             </div>
         );
     }

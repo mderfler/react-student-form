@@ -1,2 +1,13 @@
+body { 
+    padding-top: 70px;
+}
 
+.navbar {
+    background-color: #00bfff;
+    display:inline;
+}
+
+.li {
+    display: inline;
+}
 
