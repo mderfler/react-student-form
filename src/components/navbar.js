@@ -8,14 +8,13 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div>
                 <nav className="navbar navbar-default navbar-fixed-top">
                     <div className="container">
                         Project name
                         <Searchbar />
                     </div>
                 </nav>
-            </div>
+        
         );
     }
 }
