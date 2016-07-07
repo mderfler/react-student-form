@@ -5,9 +5,13 @@ var students = [
   {
     "name": "Bob Gibson",
     "status": "active",
-    "activity": "ahead",
     "id": 1
   }
+]
+
+var activities = [
+ 'ahead','behind', 'ontrack'
+
 ]
 
 var teachers = [
@@ -33,5 +37,11 @@ module.exports = {
     var deferred = new Deferred();
     deferred.resolve(teachers);
     return deferred.promise;
-  }
+  },
+
+    getActivities: function() {
+    var deferred = new Deferred();
+    deferred.resolve(activities);
+    return deferred.promise;
+  },
 };

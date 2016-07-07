@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-    background-color: #00bfff;
+    background-color: #f1f1f1;
     display:inline;
 }
 
@@ -11,3 +11,34 @@ body {
     display: inline;
 }
 
+.alignRight {
+    float: right;
+}
+
+.alignLeft {
+    float: left;
+}
+
+.topSearch {
+    margin-left: 10px;
+}
+
+.lightBlue {
+   background-color: #00bfff;
+}
+
+.lightGray {
+   background-color: #f1f1f1;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold; 
+}
+
+.box {
+    height: 100%;
+}
