@@ -9,9 +9,12 @@ const Student = (props)=>{
   const student = props.student.map((student) => {
     return (
     <div key={student.id}>
-  
+      <h4>
         {student.name}
-      
+      </h4>
+      <h6>
+        {student.teacher}
+      </h6>
     </div>
     );
   });

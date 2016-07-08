@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 const Activity = (props)=>{
-//console.log(search)
   if (props.length<1) {
     return <div>Searching...</div>;
   }
@@ -16,8 +15,8 @@ const Activity = (props)=>{
 
 return (
 <div >
-    
-      {activities}
+    {activities}
+     
     
 </div>
   );

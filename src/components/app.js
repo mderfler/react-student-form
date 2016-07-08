@@ -5,11 +5,12 @@ import Top from './top';
 import BelowTop from './belowTop';
 import Student from './studentContainer';
 import Activities from './activities';
+import WeekOf from './weekOf';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {students:[], teachers: []};
+        this.state = {students:[], teachers: [], activities:[]};
     }
 
     componentWillMount() {  
@@ -27,6 +28,10 @@ class App extends Component {
                 this.setState({teachers: data});
                 }.bind(this)
         );
+          getData.getActivities().then(
+            function(data) {
+                this.setState({activities: data});
+                }.bind(this))
      }
 
     render() {
@@ -42,12 +47,9 @@ class App extends Component {
                     <h4>Associate Training</h4>
                 </div>
                 <div className="container-fluid lightBlue centerText">
-                    <h4>
+                    
                         <Student student={this.state.students} />
-                    </h4>
-                    <h6>
-                        <Student student={this.state.teachers} />
-                    </h6>
+                    
                 </div>
                 <div className="container-fluid solidBorder">
                    <button className="btn alignLeft">BTN 1</button> <button className="btn topSearch">BTN 2</button>
@@ -57,9 +59,12 @@ class App extends Component {
                         <Activities student={this.state.students} />
                     </div>
                     <div className="col-md-8">
-                        <textarea rows="4" cols="50">
-                            new column 8
-                        </textarea>
+                        <div>
+                            <WeekOf teachers={this.state.teachers} activities={this.state.activities}/>
+                        </div>
+                        <div>
+                            Space
+                        </div>
                         <textarea rows="4" cols="50">
                             new column 8
                         </textarea>

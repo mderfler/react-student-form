@@ -20,7 +20,6 @@ class Activities extends Component{
      }
 
 render(){
-  console.log(this.props);
   return(
   <div key = {this.props.student.id}>
     <Activity id={this.props.student.id} activities={this.state.activities} />
