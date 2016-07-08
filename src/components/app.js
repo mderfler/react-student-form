@@ -6,11 +6,13 @@ import BelowTop from './belowTop';
 import Student from './studentContainer';
 import Activities from './activities';
 import WeekOf from './weekOf';
+import TextBox from './textbox';
+import SaveButton from './saveButton';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {students:[], teachers: [], activities:[]};
+        this.state = {students:[], teachers: [], activities:[], notes:'notes'};
     }
 
     componentWillMount() {  
@@ -32,6 +34,14 @@ class App extends Component {
             function(data) {
                 this.setState({activities: data});
                 }.bind(this))
+     }
+
+     logNotes(text){
+        console.log(text, " Your notes have been saved in your imagination!");
+     }
+
+     changeNotes(text){
+        this.setState({notes: text})
      }
 
     render() {
@@ -56,21 +66,25 @@ class App extends Component {
                 </div>
                 <div className="container-fluid lightGray">
                     <div className="col-md-4 box">
-                        <Activities student={this.state.students} />
+                        <Activities student={this.state.students} activities={this.state.activities} />
                     </div>
                     <div className="col-md-8">
                         <div>
                             <WeekOf teachers={this.state.teachers} activities={this.state.activities}/>
                         </div>
                         <div>
-                            Space
+                            Session Notes
                         </div>
-                        <textarea rows="4" cols="50">
-                            new column 8
-                        </textarea>
-                         <textarea rows="4" cols="50">
-                            new column 8
-                        </textarea>
+                        <TextBox sessionNotes={this.state.notes} changeNotes={this.changeNotes.bind(this)}/>
+                         <div>
+                            Other Notes
+                        </div>
+                        <TextBox />
+                        <div>
+                            Buttons
+                        </div>
+                        <SaveButton notes={this.state.notes} logNotes={this.logNotes} />
+                        <button className="btn btn-success topSearch">Cancel</button>
                     </div>
                 </div>
             </div>
