@@ -8,11 +8,12 @@ import Activities from './activities';
 import WeekOf from './weekOf';
 import TextBox from './textbox';
 import SaveButton from './saveButton';
+import CancelButton from './cancelButton';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {students:[], teachers: [], activities:[], notes:'notes'};
+        this.state = {students:[], teachers: [], activities:[], notes:'make notes', other: ''};
     }
 
     componentWillMount() {  
@@ -37,11 +38,16 @@ class App extends Component {
      }
 
      logNotes(text){
-        console.log(text, " Your notes have been saved in your imagination!");
+        console.log(this.state.notes, ":your notes to be saved")
      }
 
      changeNotes(text){
         this.setState({notes: text})
+     }
+
+     clearNotes(){
+        this.setState({notes: ""})
+        console.log(this.state.notes)
      }
 
     render() {
@@ -79,12 +85,12 @@ class App extends Component {
                          <div>
                             Other Notes
                         </div>
-                        <TextBox />
+                        <TextBox sessionNotes={this.state.other}/>
                         <div>
                             Buttons
                         </div>
-                        <SaveButton notes={this.state.notes} logNotes={this.logNotes} />
-                        <button className="btn btn-success topSearch">Cancel</button>
+                        <SaveButton notes={this.state.notes} logNotes={this.logNotes.bind(this)} />
+                        <CancelButton clearNotes={this.clearNotes.bind(this)} />
                     </div>
                 </div>
             </div>

@@ -3,18 +3,16 @@ import React, {Component} from 'react';
 class TextBox extends Component{
     constructor(props) {
         super(props);
-        this.state = { value: '' };
-       // console.log(this.props)
+        this.state = { value: this.props.sessionNotes };
     }
 
   newText(text) {
     this.props.changeNotes(text);
-   // console.log(this.state.value)
-  }  
+  } 
 
    handleChange(text) {
     this.setState({value: text});
-    this.newText(text) 
+    this.newText(text);
   }  
 
 render(){
