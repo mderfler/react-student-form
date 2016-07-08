@@ -6,9 +6,9 @@ const Activity = (props)=>{
     return <div>Searching...</div>;
   }
             
-  const activities = props.activities.map((act) => {
+  const activities = props.activities.map((act,index) => {
     return (
-    <div>
+    <div key={index}>
      {act}
     </div>
     );
