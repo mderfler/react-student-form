@@ -42,3 +42,7 @@ body {
 .box {
     height: 100%;
 }
+
+.solidBorder {
+    border-style: solid;
+}

@@ -15,7 +15,7 @@ const Activity = (props)=>{
   });
 
 return (
-<div key={props.id} >
+<div >
     
       {activities}
     

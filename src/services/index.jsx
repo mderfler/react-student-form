@@ -18,10 +18,6 @@ var teachers = [
   {
     "name": "Dan Jones",
     "id": 1
-  },
-    {
-    "name": "Jane Smith",
-    "id": 2
   }
 ]
 

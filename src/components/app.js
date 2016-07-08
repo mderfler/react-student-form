@@ -31,22 +31,28 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="container">
+            <div className="container-fluid">
+                <div className="container-fluid">
                     <Top />
                 </div>
-                <div className="container">
+                <div className="container-fluid">
                     <BelowTop />
                 </div>
-                <div className="container centerText bold">
+                <div className="container-fluid centerText bold">
                     <h4>Associate Training</h4>
                 </div>
-                <div className="container lightBlue centerText">
+                <div className="container-fluid lightBlue centerText">
                     <h4>
                         <Student student={this.state.students} />
                     </h4>
+                    <h6>
+                        <Student student={this.state.teachers} />
+                    </h6>
                 </div>
-                <div className="container lightGray">
+                <div className="container-fluid solidBorder">
+                   <button className="btn alignLeft">BTN 1</button> <button className="btn topSearch">BTN 2</button>
+                </div>
+                <div className="container-fluid lightGray">
                     <div className="col-md-4 box">
                         <Activities student={this.state.students} />
                     </div>
