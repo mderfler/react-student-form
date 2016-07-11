@@ -47,7 +47,6 @@ class App extends Component {
 
      clearNotes(){
         this.setState({notes: ""})
-        console.log(this.state.notes)
      }
 
     render() {

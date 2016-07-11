@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 
 class TextBox extends Component{
     constructor(props) {
-        super(props);
-        this.state = { value: this.props.sessionNotes };
+        super(props);   
     }
 
   newText(text) {
@@ -16,6 +15,7 @@ class TextBox extends Component{
   }  
 
 render(){
+	this.state = { value: this.props.sessionNotes };
     return(
 		<textarea rows="4" cols="50"
 			value={this.state.value}
