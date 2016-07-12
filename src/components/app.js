@@ -14,6 +14,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {students:[], teachers: [], activities:[], notes:'make notes', other: ''};
+        this.changeNotes = this.changeNotes.bind(this);
+        this.logNotes = this.logNotes.bind(this);
     }
 
     componentWillMount() {  
@@ -80,7 +82,7 @@ class App extends Component {
                         <div>
                             Session Notes
                         </div>
-                        <TextBox sessionNotes={this.state.notes} changeNotes={this.changeNotes.bind(this)}/>
+                        <TextBox sessionNotes={this.state.notes} changeNotes={this.changeNotes}/>
                          <div>
                             Other Notes
                         </div>
@@ -88,7 +90,7 @@ class App extends Component {
                         <div>
                             Buttons
                         </div>
-                        <SaveButton notes={this.state.notes} logNotes={this.logNotes.bind(this)} />
+                        <SaveButton notes={this.state.notes} logNotes={this.logNotes} />
                         <CancelButton clearNotes={this.clearNotes.bind(this)} />
                     </div>
                 </div>
